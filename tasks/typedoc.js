@@ -22,7 +22,9 @@ module.exports = function (grunt) {
 		var winExt = /^win/.test(process.platform) ? '.cmd' : '';
 
 		var done = this.async();
-		var executable = path.resolve(__dirname, '..', 'node_modules', '.bin', 'typedoc' + winExt);
+		// var executable = path.resolve(__dirname, '..', 'node_modules', '.bin', 'typedoc' + winExt);
+    var executable = path.resolve(__dirname, '..', '..', 'typedoc', 'bin', 'typedoc' + winExt);
+    console.log('executable: ', executable);
 
 		var child = child_process.spawn(executable, args, {
 			stdio: 'inherit',
